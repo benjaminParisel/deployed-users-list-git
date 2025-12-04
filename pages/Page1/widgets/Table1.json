@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 56,
+  "bottomRow": 55,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": true,
   "childStylesheet": {
@@ -109,11 +109,17 @@
     },
     {
       "key": "primaryColumns.last_update_date.computedValue"
+    },
+    {
+      "key": "primaryColumns.userName.isCellVisible"
     }
   ],
   "dynamicPropertyPathList": [
     {
       "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.userName.isCellVisible"
     }
   ],
   "dynamicTriggerPathList": [],
@@ -148,8 +154,8 @@
     "selectionBGCSSVar": "--on-canvas-ui-widget-selection",
     "selectionColorCSSVar": "--on-canvas-ui-widget-focus"
   },
-  "originalBottomRow": 57,
-  "originalTopRow": 29,
+  "originalBottomRow": 56,
+  "originalTopRow": 28,
   "parentColumnSpace": 11.125,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -571,7 +577,7 @@
       "id": "userName",
       "index": 3,
       "isCellEditable": false,
-      "isCellVisible": true,
+      "isCellVisible": "{{(() => { const tableData = Table1.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (Switch1.value)) : Switch1.value })()}}",
       "isDerived": false,
       "isDisabled": false,
       "isDiscardVisible": true,
@@ -591,7 +597,7 @@
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 47,
+  "rightColumn": 57,
   "searchKey": "",
   "tableData": "{{getUsers.data}}",
   "tags": [
@@ -600,7 +606,7 @@
   ],
   "textSize": "0.875rem",
   "thumbnailSVG": "/static/media/thumbnail.d0492f06681daa69baf92b07d3829dfc.svg",
-  "topRow": 28,
+  "topRow": 27,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,
